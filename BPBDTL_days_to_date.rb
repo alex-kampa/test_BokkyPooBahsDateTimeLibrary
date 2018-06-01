@@ -20,7 +20,7 @@ sl = SimpleLog.new({:verbose => true})
 t1 = Time.now()
 i = 0
 
-sl.h1 "Starting TS checking"
+sl.h1 "Starting _daysToDate checking"
 sl.p "Starting at #{t1.utc}"
 
 ###############################################################################
@@ -43,11 +43,9 @@ epoch = Date.new(1970,1,1)
     mm = d.month
     dd = d.mday
     assert_equal @contract.call._days_to_date(i),  [yy, mm, dd], "_days_to_date"
-    # assert_equal @contract.call._days_to_date(i),  100, "_days_to_date"
   rescue Test::Unit::AssertionFailedError
     err = $!.to_s.gsub!(/\n/, " ") + " #{i}"
     @errors << err
-    # puts "ERROR ", err
   end
 
 end
@@ -69,17 +67,3 @@ end
 
 tname = File.basename(__FILE__).gsub(/.rb$/, "")
 write_to_file(sl.sLog, "#{tname}.log")
-
-# -----------------------------------------------------------------------------
-
-BEGIN {
-
-  def days_in_month(yy, mm)  
-    case mm  
-    when 4,6,9,11 then 30  
-    when 2 then (yy%4==0 && yy%100!=0 || yy%400==0) ? 29 : 28  
-    else 31  
-    end  
-  end
-
-}
