@@ -20,7 +20,7 @@ sl = SimpleLog.new({:verbose => true})
 t1 = Time.now()
 i = 0
 
-sl.h1 "Starting ads/substract checking"
+sl.h1 "Starting add/subtract checking"
 sl.p "Starting at #{t1.utc}"
 
 ###############################################################################

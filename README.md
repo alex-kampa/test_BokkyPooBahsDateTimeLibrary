@@ -8,6 +8,11 @@ Ruby 2.4.2p198 on Windows 10, using the Ethereum.rb gem
 
 Note that the number of requests handled by the Parity node was less than 100 per second, which limits the extent of testing possible.
 
+## Test Result
+
+Code review: no issues identified
+
+Testing: all tests passed, no errors were found
 
 ## == exhaustive tests
 
@@ -89,6 +94,6 @@ Adding / subtracting time periods of approximately 0-299 years
 * [x] subMinutes
 * [x] subSeconds
 
-First pass: ongoing, checked each function at >60k random time points
+First pass: checked each function 100_000 times
 
 Note: also checking that subtractions resulting in a date before 1970-01-01 00:00:00
